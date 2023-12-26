@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "my-project",
-    "slug": "my-project",
+    "name": "高特数据平台",
+    "slug": "gd-data-app-expo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/favicon.ico",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -24,7 +24,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.ico"
     }
   }
 }
