@@ -9,11 +9,17 @@ import {
   TouchableOpacity,
   ImageSourcePropType,
   Button,
+  Alert,
 } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { useAppDispatch } from '@/hooks/index'
+
+import { logout } from '@/store/features/Login/loginSlice'
 
 const Mine: React.FC = () => {
+  const dispatch = useAppDispatch()
+
   interface MenusType {
     name: string
     icon: string
@@ -44,6 +50,19 @@ const Mine: React.FC = () => {
         </View>
       </TouchableOpacity>
     )
+  }
+
+  const logoutHandle = () => {
+    Alert.alert('提示', '确认退出当前账号', [
+      {
+        text: '取消',
+        onPress: () => {},
+      },
+      {
+        text: '确定',
+        onPress: () => dispatch(logout()),
+      },
+    ])
   }
   return (
     <View style={[styles.mineContainer]}>
@@ -94,7 +113,7 @@ const Mine: React.FC = () => {
       </View>
 
       {/* 退出登陆按钮 */}
-      <TouchableOpacity>
+      <TouchableOpacity onPress={logoutHandle}>
         <View style={[styles.outBtn]}>
           <Text style={[styles.outBtnText]}>退出登录</Text>
         </View>
